@@ -65,7 +65,7 @@ def load_data(data_dir):
     for sign in os.listdir(data_dir):
         for image_name in os.listdir(os.path.join(data_dir, sign)):
             image = cv2.imread(os.path.join(data_dir, sign, image_name))
-            image.resize((IMG_WIDTH, IMG_HEIGHT))
+            image = cv2.resize(image, (IMG_WIDTH, IMG_HEIGHT))
             images.append(image)
             labels.append(sign)
 
